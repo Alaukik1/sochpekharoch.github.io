@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     const parallaxElements = document.querySelectorAll('.parallax-element');
     
@@ -11,18 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
             element.style.transform = `translate3d(0, ${yPos}px, 0)`;
         });
     });
-=======
-document.addEventListener('DOMContentLoaded', () => {
-    const parallaxElements = document.querySelectorAll('.parallax-element');
+
+    // Back to top functionality
+    const backToTop = document.getElementById('back-to-top');
+    const heroSection = document.querySelector('.hero-content');
     
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        parallaxElements.forEach(element => {
-            const speed = element.getAttribute('data-speed');
-            const yPos = -(scrolled * speed);
-            element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    const handleScroll = () => {
+        if (heroSection) {
+            const heroHeight = heroSection.offsetHeight;
+            const scrolled = window.pageYOffset;
+            
+            // Show button when scrolled 70% of hero height
+            if (scrolled > (heroHeight * 0.7)) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+    };
+
+    // Smooth scroll to top
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
->>>>>>> 82743115659f67691faccbbc3fa5f0bb7210024c
+
+    window.addEventListener('scroll', handleScroll);
 }); 
