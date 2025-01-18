@@ -39,24 +39,26 @@ main {
 /* Navigation */
 header {
     width: 100%;
-    background: transparent;
     padding: 0.8rem 0;
     z-index: 100;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 1.5rem;
     left: 0;
-    background: #fff5f3;
-    padding: 0.8rem 0;
-    z-index: 100;
 }
 
 nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem 0;
-    max-width: 100%;
-    margin: 0;
+    padding: 0.8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.6);
+    width: 95%;
 }
 
 .logo {
@@ -84,12 +86,12 @@ nav {
     display: flex;
     gap: 0.4rem;
     list-style: none;
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
+    backdrop-filter: none;
     padding: 0.5rem 0.6rem;
     border-radius: 15px;
     margin-left: auto;
     margin-right: 2rem;
-    backdrop-filter: blur(10px);
 }
 
 .nav-links a {
@@ -100,6 +102,7 @@ nav {
     padding: 0.2rem 0.6rem;
     border-radius: 10px;
     opacity: 0.8;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .nav-links a.active {
@@ -122,13 +125,21 @@ nav {
 .search-input {
     padding: 0.5rem 1.2rem;
     border: none;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(45, 45, 45, 0.06);
     border-radius: 12px;
     color: #2d3436;
     outline: none;
     font-size: 0.9rem;
-    width: 140px;
-    backdrop-filter: blur(10px);
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.search-input.active {
+    width: 200px;
+    padding: 0.5rem 1.2rem;
+    opacity: 1;
 }
 
 .search-input::placeholder {
@@ -146,6 +157,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .search-button:hover {
@@ -153,17 +165,40 @@ nav {
 }
 
 /* Hero Section */
+#hero.parallax-section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(135deg, var(--soft-peach) 0%, #fff5f3 100%);
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
 .hero-content {
     text-align: center;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 6rem 2rem 2rem;
+    padding: 0 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -174,7 +209,7 @@ nav {
     -webkit-text-fill-color: transparent;
     margin-bottom: 2rem;
     line-height: 1.2;
-    padding-top: 2rem;
+    padding-top: 0;
 }
 
 .hero-content .tagline {
@@ -236,7 +271,8 @@ nav {
 
 /* Featured Project Section */
 #featured-project {
-    padding: 8rem 2rem;
+    margin-top: 0;
+    padding-top: 6rem;
     background: linear-gradient(135deg, #ffe4dd 0%, #ffeae5 100%);
     text-align: center;
     position: relative;
@@ -1045,7 +1081,16 @@ footer {
     color: #2d3436;
     outline: none;
     font-size: 0.9rem;
-    width: 140px;
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.search-input.active {
+    width: 200px;
+    padding: 0.5rem 1.2rem;
+    opacity: 1;
 }
 
 .search-input::placeholder {
@@ -1063,6 +1108,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .search-button:hover {
@@ -1072,14 +1118,14 @@ footer {
 /* Hero Section */
 .hero-content {
     text-align: center;
-    min-height: calc(100vh - 80px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
 }
 

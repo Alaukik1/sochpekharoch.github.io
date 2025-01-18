@@ -38,4 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('scroll', handleScroll);
+});
+
+function toggleSearch() {
+    const searchInput = document.querySelector('.search-input');
+    searchInput.classList.toggle('active');
+    if (searchInput.classList.contains('active')) {
+        searchInput.focus();
+    }
+}
+
+// Close search when clicking outside
+document.addEventListener('click', function(event) {
+    const searchContainer = document.querySelector('.search-container');
+    const searchInput = document.querySelector('.search-input');
+    
+    if (!searchContainer.contains(event.target)) {
+        searchInput.classList.remove('active');
+    }
 }); 
