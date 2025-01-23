@@ -28,12 +28,14 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    overflow-x: hidden;
 }
 
 main {
     flex: 1;
     background: var(--soft-peach-light);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -1897,6 +1899,13 @@ footer {
     border-radius: 20px;
     overflow: hidden;
     height: 400px; /* Adjust this value based on your needs */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 50px rgba(228, 104, 180, 0.3);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-image img {
@@ -1917,4 +1926,197 @@ footer {
     font-size: 0.9rem;
     font-weight: 500;
     z-index: 2;
+}
+
+/* Privacy Policy Styles */
+.privacy-policy {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 120px 20px 20px 20px;
+    display: flex;
+    gap: 3rem;
+}
+
+.privacy-content {
+    flex: 1;
+    max-width: 800px;
+}
+
+.privacy-policy h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy section {
+    margin: 2rem 0;
+}
+
+.privacy-policy h2 {
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy ul li {
+    margin-bottom: 0.5rem;
+}
+
+.privacy-policy h3 {
+    color: #555;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.privacy-policy strong {
+    font-weight: 600;
+}
+
+.jump-to {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.jump-to h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.jump-to ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jump-to li {
+    margin-bottom: 0.5rem;
+}
+
+.jump-to a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    padding: 5px 0;
+}
+
+.jump-to a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .privacy-policy {
+        flex-direction: column;
+    }
+
+    .jump-to {
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .jump-to ul {
+        columns: 2;
+        column-gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .jump-to ul {
+        columns: 1;
+    }
+}
+
+/* Main glow effect */
+.platform-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle at center,
+        rgba(228, 104, 180, 0.9),
+        rgba(255, 158, 23, 0.7),
+        rgba(49, 164, 153, 0.8),
+        rgba(255, 206, 196, 0.8)
+    );
+    filter: blur(80px);
+    z-index: -1;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Secondary glow effect */
+.platform-image::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 110%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(
+        from 0deg,
+        rgba(228, 104, 180, 0.8),
+        rgba(49, 164, 153, 0.7),
+        rgba(255, 158, 23, 0.8),
+        rgba(255, 206, 196, 0.7),
+        rgba(228, 104, 180, 0.8)
+    );
+    filter: blur(50px);
+    z-index: -2;
+    animation: rotateGlow 8s linear infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes rotateGlow {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.dashboard-screen {
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background: white;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
 }
