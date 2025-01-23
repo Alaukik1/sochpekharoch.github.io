@@ -1937,6 +1937,17 @@ footer {
     gap: 3rem;
 }
 
+.jump-to {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
 .privacy-content {
     flex: 1;
     max-width: 800px;
@@ -1978,16 +1989,6 @@ footer {
 
 .privacy-policy strong {
     font-weight: 600;
-}
-
-.jump-to {
-    position: sticky;
-    top: 120px;
-    height: fit-content;
-    width: 250px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
 }
 
 .jump-to h2 {
