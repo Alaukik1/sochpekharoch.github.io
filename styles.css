@@ -33,19 +33,20 @@ body {
 
 main {
     flex: 1;
-    background: var(--soft-peach-light);
-    min-height: 100vh;
-    overflow-x: hidden;
+    width: 100%;
+    margin-top: 0;
+    overflow-y: auto;
 }
 
 /* Navigation */
 header {
-    width: 100%;
-    padding: 0.8rem 0;
-    z-index: 100;
     position: fixed;
     top: 1.5rem;
     left: 0;
+    z-index: 1000;
+    width: 100%;
+    background: transparent;
+    padding: 0;
 }
 
 nav {
@@ -597,11 +598,12 @@ footer {
 
 /* Serenity Page Styles */
 .serenity-hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px); /* Adjust 80px based on your header height */
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
     padding: 8rem 4rem;
     background: linear-gradient(135deg, var(--soft-peach) 0%, #fff5f3 100%);
-    position: relative;
-    overflow: hidden;
 }
 
 /* Remove the glass effect background layer */
@@ -616,11 +618,12 @@ footer {
 
 /* Update hero background */
 .serenity-hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px); /* Adjust 80px based on your header height */
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
     padding: 8rem 4rem;
     background: linear-gradient(135deg, var(--soft-peach) 0%, #fff5f3 100%);
-    position: relative;
-    overflow: hidden;
 }
 
 /* Update z-index handling */
