@@ -1935,25 +1935,26 @@ footer {
     padding: 120px 20px 20px 20px;
     display: flex;
     gap: 3rem;
-    position: relative;
+}
+
+.jump-to-container {
+    width: 250px;
+    flex-shrink: 0;
 }
 
 .jump-to {
-    position: fixed;
+    position: sticky;
     top: 120px;
     height: fit-content;
     width: 250px;
     padding: 20px;
     background: #f8f9fa;
     border-radius: 10px;
-    flex-shrink: 0;
-    left: calc((100% - 1200px) / 2 + 20px);
 }
 
 .privacy-content {
     flex: 1;
     max-width: 800px;
-    margin-left: 270px;
 }
 
 .privacy-policy h1 {
@@ -2027,21 +2028,15 @@ footer {
         flex-direction: column;
     }
 
+    .jump-to-container {
+        width: 100%;
+    }
+
     .jump-to {
         position: static;
         top: 0;
         width: 100%;
         margin-bottom: 2rem;
-        left: auto;
-    }
-
-    .privacy-content {
-        margin-left: 0;
-    }
-
-    .jump-to ul {
-        columns: 2;
-        column-gap: 2rem;
     }
 }
 
