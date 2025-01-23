@@ -1935,10 +1935,11 @@ footer {
     padding: 120px 20px 20px 20px;
     display: flex;
     gap: 3rem;
+    position: relative;
 }
 
 .jump-to {
-    position: sticky;
+    position: fixed;
     top: 120px;
     height: fit-content;
     width: 250px;
@@ -1946,11 +1947,13 @@ footer {
     background: #f8f9fa;
     border-radius: 10px;
     flex-shrink: 0;
+    left: calc((100% - 1200px) / 2 + 20px);
 }
 
 .privacy-content {
     flex: 1;
     max-width: 800px;
+    margin-left: 270px;
 }
 
 .privacy-policy h1 {
@@ -2025,10 +2028,15 @@ footer {
     }
 
     .jump-to {
-        position: relative;
+        position: static;
         top: 0;
         width: 100%;
         margin-bottom: 2rem;
+        left: auto;
+    }
+
+    .privacy-content {
+        margin-left: 0;
     }
 
     .jump-to ul {
