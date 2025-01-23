@@ -4,19 +4,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.querySelector('.search-button');
     const searchInput = document.querySelector('.search-input');
 
-    hamburgerMenu.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle('active');
-        hamburgerMenu.classList.toggle('active');
-    });
+    if (hamburgerMenu && navLinks) {
+        hamburgerMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            console.log('Menu clicked'); // For debugging
+        });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.hamburger-menu') && !e.target.closest('.nav-links')) {
-            navLinks.classList.remove('active');
-            hamburgerMenu.classList.remove('active');
-        }
-    });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburgerMenu.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    } else {
+        console.error('Menu elements not found'); // For debugging
+    }
 
     // Handle search
     searchButton.addEventListener('click', function(e) {
