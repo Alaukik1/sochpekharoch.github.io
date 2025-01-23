@@ -2128,13 +2128,71 @@ footer {
 
 /* Add/update responsive styles */
 @media (max-width: 768px) {
-    /* Navigation */
-    .nav-links {
-        display: none;  /* Hide regular nav on mobile */
+    /* Navigation adjustments */
+    nav {
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
     }
 
-    .mobile-menu {
-        display: block;  /* Show mobile menu button */
+    .logo {
+        flex: 1;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0.5rem;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        border-radius: 12px;
+    }
+
+    .search-container {
+        display: none; /* Hide search on mobile */
+    }
+
+    /* Show hamburger */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Active menu styles */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-links.active li {
+        width: 100%;
+    }
+
+    .nav-links.active a {
+        display: block;
+        padding: 0.8rem;
+        text-align: center;
+        font-size: 1.1rem;
     }
 
     /* Serenity Hero Section */
