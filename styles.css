@@ -50,7 +50,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 0.8rem 2rem;
     max-width: 1400px;
@@ -2313,7 +2313,6 @@ footer {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    margin-left: 1rem;
     z-index: 100;
 }
 
