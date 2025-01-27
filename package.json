@@ -1,0 +1,24 @@
+{
+  "name": "spk-website",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "http-server -p 8080 -c-1",
+    "start": "http-server -p 8080 -c-1"
+  },
+  "main": "parallax.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alaukik1/sochpekharoch.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alaukik1/sochpekharoch.github.io/issues"
+  },
+  "homepage": "https://github.com/Alaukik1/sochpekharoch.github.io#readme",
+  "description": "",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
